@@ -42,3 +42,16 @@ const libros = [
         "year": "1886"
     }
 ];
+
+for (const libro of libros) {
+    if(libro.genero === "Ciencia Ficción" && libro.year < 1900){
+        document.querySelector("#box").insertAdjacentHTML("beforeend",`
+            <div class="libro">
+                <h1>${libro.titulo}</h1>
+                <h2>${libro.autor}</h2>
+                <p>Genero: ${libro.genero} - Año: ${libro.year}</p>
+            </div>
+        `);
+    }
+    
+}
